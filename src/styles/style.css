@@ -1,3 +1,73 @@
-h1 {
-  color: purple;
+@import url('https://fonts.googleapis.com/css2?family=Playball&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Comfortaa', cursive;
+}
+
+.container {
+  margin: 1.5rem 5rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  color: #ff0a54;
+}
+
+.brand-icon {
+  font-size: 1.5rem;
+}
+
+.brand-text {
+  font-family: 'Playball', cursive;
+  font-size: 2.5rem;
+  margin-left: 0.5rem;
+}
+
+.search-input {
+  border: none;
+  border-bottom: 2px solid #ff0a54;
+  outline: none;
+  border-radius: 2px;
+  height: 35px;
+  width: 400px;
+  font-size: 1.2rem;
+  margin-right: 1rem;
+  padding-left: 0.2rem;
+  color: #585858;
+  font-family: 'Comfortaa', cursive;
+}
+
+.search-button {
+  cursor: pointer;
+  background-color: #ff0a54;
+  color: #ffffff;
+  border: none;
+  padding: 0.4rem 1.2rem;
+  border-radius: 5px;
+  font-weight: 600;
+  font-family: 'Comfortaa', cursive;
+  height: 40px;
+  width: 100px;
+}
+
+.search-button:hover {
+  background-color: #d60644;
+}
+
+.bookmark {
+  cursor: pointer;
+  color: #ff0a54;
+  font-weight: 600;
 }
