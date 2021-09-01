@@ -29,6 +29,50 @@
           <span class="bookmark-text">Bookmarks</span>
         </div>
       </header>
+      <section class="recipes-container">
+        <section class="recipes-list"></section>
+        <section class="recipe">
+          <div class="message" id="message">
+            <p><i class="fas fa-search"></i>Start by searching recipe you are interested in</p>
+          </div>
+          <div class="loader" id="loader" hidden="true"></div>
+          <div id="recipe-container" hidden="true">
+            <div class="recipe-header">
+              <div class="recipe-details">
+                <div class="recipe-heading">
+                  <h1 class="recipe-name" id="recipe-name"></h1>
+                  <p>by <span class="recipe-source" id="recipe-source"></span></p>
+                </div>
+                <div class="recipe-info">
+                  <div>
+                    <i class="far fa-clock"></i>
+                    <span class="recipe-time" id="recipe-time"></span>
+                    Minutes
+                  </div>
+                  <div>
+                    <span class="recipe-servings-text">Servings</span>
+                    <i class="fas fa-chevron-left"></i>
+                    <span class="recipe-servings" id="recipe-servings"></span>
+                    <i class="fas fa-chevron-right"></i>
+                  </div>
+                </div>
+                <div class="recipe-bookmark">
+                  <i class="far fa-bookmark"></i>
+                  <span>Add Bookmark</span>
+                </div>
+              </div>
+              <img id="recipe-img" alt="recipe-img" />
+            </div>
+            <div class="recipe-ingredients">
+              <h2 class="recipe-ingredients-heading">Recipe Ingredients</h2>
+              <ul class="recipe-ingredients-list" id="recipe-ingredients-list"></ul>
+            </div>
+            <div class="recipe-direction">
+              <a class="recipe-direction-link" id="recipe-direction-link" href="" target="_blank">Learn how to cook <i class="fas fa-long-arrow-alt-right"></i></a>
+            </div>
+          </div>
+        </section>
+      </section>
     </div>
   </body>
 </html>
