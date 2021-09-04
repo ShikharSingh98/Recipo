@@ -4,6 +4,7 @@ import '../styles/style.css';
 
 import { APP_ID, APP_KEY } from './ApiKeys';
 
+const searchRecipeForm = document.getElementById('search-recipe-form');
 const message = document.getElementById('message');
 const recipeContainer = document.getElementById('recipe-container');
 const recipesList = document.getElementById('recipes-list');
@@ -36,6 +37,7 @@ function recipeSelected() {
 }
 
 function displayRecipesList() {
+  recipesList.innerHTML = '';
   recipes.map(({ recipe }) => {
     const recipesListItem = document.createElement('div');
     const recipesListItemImg = document.createElement('img');
@@ -60,6 +62,7 @@ function displayRecipesList() {
     recipesListItem.append(recipesListItemImg, recipesListItemDetails);
     recipesList.append(recipesListItem);
   });
+  recipesList.hidden = false;
 }
 
 function displayRecipe() {
@@ -79,11 +82,13 @@ function displayRecipe() {
   loader.hidden = true;
 }
 
-async function getRecipesFromApi() {
+async function getRecipesFromApi(searchTerm) {
   message.hidden = true;
+  recipeContainer.hidden = true;
+  recipesList.hidden = true;
   loader.hidden = false;
   try {
-    const response = await fetch(`https://api.edamam.com/api/recipes/v2?type=public&q=chicken&app_id=${APP_ID}&app_key=${APP_KEY}`);
+    const response = await fetch(`https://api.edamam.com/api/recipes/v2?type=public&q=${searchTerm}&app_id=${APP_ID}&app_key=${APP_KEY}`);
     const data = await response.json();
 
     if (!response.ok) {
@@ -97,4 +102,8 @@ async function getRecipesFromApi() {
   }
 }
 
-getRecipesFromApi();
+searchRecipeForm.addEventListener('submit', function (event) {
+  event.preventDefault();
+  const formData = new FormData(searchRecipeForm);
+  getRecipesFromApi(formData.get('search-term'));
+});
