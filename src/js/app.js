@@ -1,6 +1,5 @@
 import '../styles/style.css';
 import regeneratorRuntime from 'regenerator-runtime';
-import '../styles/style.css';
 
 import { APP_ID, APP_KEY } from './ApiKeys';
 
