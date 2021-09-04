@@ -1,3 +1,4 @@
+import { recipeSelected } from '../controller.js';
 const recipesList = document.getElementById('recipes-list');
 
 export function displayRecipesList(recipes) {
@@ -11,7 +12,7 @@ export function displayRecipesList(recipes) {
 
     recipesListItem.className = 'recipes-list-item';
     recipesListItem.dataset.recipeName = recipe.label;
-    // recipesListItem.addEventListener('click', recipeSelected);
+    recipesListItem.addEventListener('click', recipeSelected);
 
     recipesListItemImg.setAttribute('src', recipe.image);
     recipesListItemImg.className = 'recipes-list-item-img';

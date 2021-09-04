@@ -1,7 +1,8 @@
 import { APP_ID, APP_KEY } from './ApiKeys';
 
 export const state = {
-  recipes: {},
+  recipes: [],
+  selectedRecipe: {},
 };
 
 export async function getRecipesFromApi(searchTerm) {

@@ -7,7 +7,7 @@ const recipeIngredientsList = document.getElementById('recipe-ingredients-list')
 const recipeImg = document.getElementById('recipe-img');
 const recipeDirectionLink = document.getElementById('recipe-direction-link');
 
-export function displayRecipe({ recipe }) {
+export function displayRecipe(recipe) {
   const { image, ingredientLines, source, totalTime, yield: servings, label, url } = recipe;
   recipeName.textContent = label;
   recipeSource.textContent = source;
